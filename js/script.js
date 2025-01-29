@@ -97,27 +97,34 @@ const expenseChart = new Chart(ctx, config);
 
 
 
-function ShowAlert(){
-  Swal.fire({
-    title: 'erroe!',
-    text: 'Please fill out all fields!.',
-    icon: 'error',
-    confirmButtonText: 'OK'
-});
+// function ShowAlert(){
+//   Swal.fire({
+//     title: 'Error!',
+//     text: 'Please fill out all fields!',
+//     icon: 'error',
+//     confirmButtonText: 'OK'
+//   });
+// }
 
+
+function resetForm(){
+    document.getElementById("income").value ='';
+    document.getElementById("name").value ='';
+    document.getElementById("goals").value ='';
 }
-
+resetForm()
 function btnStartCalculation() {
   const formData = {
-      income: document.getElementById("income").value.trim(),
-      name: document.getElementById("name").value.trim(),
-      goals: document.getElementById("goals").value.trim(),
+      income: document.getElementById("income").value,
+      name: document.getElementById("name").value,
+      goals: document.getElementById("goals").value,
   };
   if (!formData.income || !formData.name || !formData.goals) {
-    ShowAlert()
+    alert("Please fill out all fields!")
     return;
   }
   localStorage.setItem("formData", JSON.stringify(formData));
+  resetForm()
   window.location.href = "home.html";
 }
 

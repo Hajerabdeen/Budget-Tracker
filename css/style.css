@@ -18,12 +18,7 @@
     box-sizing: border-box;
 }
 
-/* Prevent unnecessary horizontal and vertical scrolling*/
 html, body {
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 100%;
-    max-width: 100vw;
     height: 100%;
     background-color: var(--background-light);
     color: var(--text-dark);
@@ -33,19 +28,19 @@ html, body {
 /* Main Section */
 .welcomee {
     display: flex;
-    width: 100%;
-    height: 800px;
-    overflow: hidden;
+    height: 100%;
 }
 
 /* Left Section */
 .frome-14 {
     flex: 1;
     background-color: var(--background-light);
+    display: flex;
+    justify-content: center;
 }
 
 .image-section-img {
-    width: 85%;
+    
     height: 100%;
 
 }
@@ -62,7 +57,6 @@ html, body {
 }
 
 .frome-18 {
-    width: 100%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -76,7 +70,10 @@ html, body {
 .main-title-header-div {
     line-height: 1.4;
 }
-
+span{
+    color: #51D289; 
+    text-align: center;
+}
 .main-title-header-h1 {
     font-weight: 700;
     font-size: 60px;
@@ -111,8 +108,6 @@ html, body {
 /* Button */
 .custom-button {
     background: var(--primary-color);
-    width: 100%;
-    max-width: 450px;
     height: 52px;
     font-size: 21px;
     border-radius: 4px;
@@ -129,79 +124,54 @@ html, body {
     /* Special mobile format */
 @media only screen and (max-width: 390px) {
     
-    .welcome{
-        width: 390px;
-        margin: 0;
-        padding: 0;
-    }
    .frome-14{
         display: none;
    }
-   .frome-13 {
-        width: 100%;
-   }
-   .frome-18{
-        width: 336px;
+   .frome-18{    
         height: 632px;
    }
-   .main-title-header{
-        width: 249px;
+   .main-title-header{    
         height: 164px;
    }
    .form-fields{
-    width: 329.26px;
     height: 233.43px;
    }
-   .frome{
-        width: 323.1px;
+   .frome{   
         height: 45.86px;
    }
    .custom-button{
-        width: 323px;
-        height: 53;
+        height: 53px;
    }
   }
 /* //  Special mobile format // */
 
 @media only screen and (max-width: 950px) {
     /* Special tablet format */
-    .welcome{
-        width: 744px;
-        height: 844px;
-       
+    .welcome{     
+        height: 844px;    
     }
    .frome-14{
         display: none;
    }
-   .frome-13 {
-        width: 100%;
-        height: 100%;
-       
+   .frome-13 {      
+        height: 100%;    
    }
-   .frome-18{
-        width: 700px;
+   .frome-18{    
         height: 700px;
-    
    }
-   .main-title-header{
-        width: 100%;
+   .main-title-header{   
         height: 164px;
-   
    }
    .form-fields{
-        width: 329.26px;
         height: 233.43px;
         margin-top: 50px;
    }
-   .frome{
-        width: 323.1px;
+   .frome{     
         height: 45.86px;
         line-height: 40px;
-
    }
-   .custom-button{
-        width: 323px;
-        height: 53;
+   .custom-button{        
+        height: 53px;
    }
   }
     /* // Special tablet format // */
