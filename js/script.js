@@ -94,3 +94,32 @@ const expenseChart = new Chart(ctx, config);
 
 // // Pass in a number for the percent
 // updateDonutChart("#specificChart", 66.67, true);
+
+
+
+function ShowAlert(){
+  Swal.fire({
+    title: 'erroe!',
+    text: 'Please fill out all fields!.',
+    icon: 'error',
+    confirmButtonText: 'OK'
+});
+
+}
+
+function btnStartCalculation() {
+  const formData = {
+      income: document.getElementById("income").value.trim(),
+      name: document.getElementById("name").value.trim(),
+      goals: document.getElementById("goals").value.trim(),
+  };
+  if (!formData.income || !formData.name || !formData.goals) {
+    ShowAlert()
+    return;
+  }
+  localStorage.setItem("formData", JSON.stringify(formData));
+  window.location.href = "home.html";
+}
+
+
+
