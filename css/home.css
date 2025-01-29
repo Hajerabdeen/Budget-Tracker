@@ -1,0 +1,162 @@
+:root {
+  --main-color: #1e1e1e;
+  --heading-color: #51d289;
+  --btn-color: #ffe600;
+  --bg-color: #fbfbfb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Custom CSS */
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+.bg-white {
+  background-color: var(--bg-color) !important;
+}
+.btn-color {
+  color: var(--btn-color);
+}
+.heading-color {
+  color: var(--heading-color) !important;
+}
+.heading-bg {
+  background-color: var(--heading-color) !important;
+}
+.btn-bg {
+  background-color: var(--btn-color);
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+.fs-15 {
+  font-size: 14px !important;
+}
+.fs-13 {
+  font-size: 13px !important;
+}
+.fs-12 {
+  font-size: 11px !important;
+}
+.w-95 {
+  width: 95% !important;
+}
+.brdr-btm {
+  border-bottom: 1px solid#B2B2B2;
+}
+.brdr-top {
+  border-top: 1px solid#B2B2B2;
+}
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+body {
+  background-color: var(--main-color);
+  font-family: "Open Sans", serif;
+  height: 100vh;
+  max-height: auto;
+}
+.fw-800 {
+  font-weight: 800 !important;
+}
+nav .nav-content {
+  border-bottom: 1px solid #fffde7;
+}
+
+.filter {
+  border-right: 1px solid var(--btn-color);
+  padding-right: 5px;
+}
+.dropdown-toggle {
+  width: 100% !important;
+  border: 1px solid var(--btn-color) !important;
+}
+.dropdown-toggle::after {
+  color: var(--btn-color);
+}
+.dropdown-menu {
+  background-color: var(--main-color);
+}
+.dropdown-item:hover {
+  color: var(--main-color) !important;
+  background-color: var(--btn-color);
+}
+.income {
+  background-color: #fffde7;
+}
+/* .chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; 
+  border-radius: 10px;
+  padding: 20px;
+} */
+
+#expenseChart {
+  width: 100%;
+  max-width: 80%;
+  height: 80%;
+  margin: 15px auto;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info-card {
+  width: 100%;
+}
+.reset-btn {
+flex-grow: 1;
+}
+
+.fixed-expenses {
+  flex-grow: 1;
+  gap: 20px;
+}
+.flex-grow-1{
+  flex-grow: 1 !important;
+}
+.expense img {
+  width: 40px;
+  height: 40px;
+}
+
+.goals-text{
+  border-left: 3px solid var(--heading-color);
+}
+@media (max-width: 768px) {
+  .navbar-brand img{
+    width: 70px;
+    height: 70px;
+
+  }
+.nav-header p {
+font-size: 12px !important;
+}
+.nav-header h1{
+  font-size: 25px !important;
+}
+}
+@media (min-width: 769px)and (max-width: 992px) {
+  .navbar-brand img{
+    width: 100px;
+    height: 100px;
+
+  }
+.nav-header p {
+font-size: px !important;
+}
+.nav-header h1{
+  font-size: 30px !important;
+}
+}
+
+.add-btn{
+  flex-grow: 1;
+}
