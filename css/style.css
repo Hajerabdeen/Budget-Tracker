@@ -18,11 +18,15 @@
     box-sizing: border-box;
 }
 
+
 /* Prevent unnecessary horizontal and vertical scrolling*/
 body {
     overflow-x: hidden;
     overflow-y: auto;
     height:100vh;
+}
+html, body {
+    height: 100%;
     background-color: var(--background-light);
     color: var(--text-dark);
     font-family: "Open Sans", sans-serif;
@@ -32,7 +36,7 @@ body {
 .welcomee {
     display: flex;
     height: 100%;
-    overflow: hidden;
+
 }
 
 /* Left Section */
@@ -73,7 +77,10 @@ body {
 .main-title-header-div {
     line-height: 1.4;
 }
-
+span{
+    color: #51D289; 
+    text-align: center;
+}
 .main-title-header-h1 {
     font-weight: 700;
     font-size: 60px;
@@ -137,6 +144,13 @@ body {
         height: 632px;
    }
    .main-title-header{
+   .frome-14{
+        display: none;
+   }
+   .frome-18{    
+        height: 632px;
+   }
+   .main-title-header{    
         height: 164px;
    }
    .form-fields{
@@ -148,13 +162,24 @@ body {
    .custom-button{
         height: 53;
    }
+   .frome{   
+        height: 45.86px;
+   }
+   .custom-button{
+        height: 53px;
+   }
   }
 /* //  Special mobile format // */
 
 @media only screen and (max-width: 950px) {
     /* Special tablet format */
+
     .welcome{
         height: 844px;
+    }
+    .welcome{     
+        height: 844px;    
+
     }
    .frome-14{
         display: none;
@@ -164,15 +189,22 @@ body {
    }
    .frome-18{
     height: 700px;
-    
    }
-   .main-title-header{
+   
+   .frome-13 {      
+        height: 100%;    
+   }
+   .frome-18{    
+        height: 700px;
+   }
+   .main-title-header{   
         height: 164px;
    }
    .form-fields{
         height: 233.43px;
         margin-top: 50px;
    }
+
    .frome{
         height: 45.86px;
         line-height: 40px;
@@ -181,7 +213,12 @@ body {
 
         height: 53;
    }
+   .frome{     
+        height: 45.86px;
+        line-height: 40px;
+   }
+   .custom-button{        
+        height: 53px;
+   }
   }
     /* // Special tablet format // */
-
-       

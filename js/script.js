@@ -70,17 +70,32 @@ const expenseChart = new Chart(ctx, config);
 
 // }
 
+
+
+
+function resetForm(){
+    document.getElementById("income").value ='';
+    document.getElementById("name").value ='';
+    document.getElementById("goals").value ='';
+}
+resetForm()
+
 function btnStartCalculation() {
   const formData = {
-      income: document.getElementById("income").value.trim(),
-      name: document.getElementById("name").value.trim(),
-      goals: document.getElementById("goals").value.trim(),
+      income: document.getElementById("income").value,
+      name: document.getElementById("name").value,
+      goals: document.getElementById("goals").value,
   };
   if (!formData.income || !formData.name || !formData.goals) {
+<<<<<<< HEAD
     alert("Please fill out all fields  ! ,")
+=======
+    alert("Please fill out all fields!")
+>>>>>>> welcome
     return;
   }
   localStorage.setItem("formData", JSON.stringify(formData));
+  resetForm()
   window.location.href = "home.html";
 }
 
