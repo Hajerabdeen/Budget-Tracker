@@ -60,15 +60,15 @@ const config = {
 const expenseChart = new Chart(ctx, config);
 
 
-function ShowAlert(){
-  Swal.fire({
-    title: 'error!',
-    text: 'Please fill out all fields!.',
-    icon: 'error',
-    confirmButtonText: 'OK'
-});
+// function ShowAlert(){
+//   Swal.fire({
+//     title: 'error!',
+//     text: 'Please fill out all fields!.',
+//     icon: 'error',
+//     confirmButtonText: 'OK'
+// });
 
-}
+// }
 
 function btnStartCalculation() {
   const formData = {
@@ -77,7 +77,7 @@ function btnStartCalculation() {
       goals: document.getElementById("goals").value.trim(),
   };
   if (!formData.income || !formData.name || !formData.goals) {
-    ShowAlert()
+    alert("Please fill out all fields  ! ,")
     return;
   }
   localStorage.setItem("formData", JSON.stringify(formData));
