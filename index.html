@@ -9,6 +9,10 @@
     <title>Personal Budget Tracking</title>
 </head>
 <body>
+
+    <!-- alaet -->
+    <div class="fixed-top" id="liveAlertPlaceholder"></div>
+    <!-- // alaet // -->
     <div class="welcomee">
         <div class="frome-14">
           <img class="image-section-img" src="img/welcome/Frame 14.png" alt="Description">
@@ -22,10 +26,10 @@
                 </div>
                 <div class="form-fields">
                     
-                    <input type="text" class="frome frome-15 open-sans" placeholder="insert your income">
-                    <input type="text" class="frome frome-16 open-sans" placeholder="insert your name">
-                    <input type="text" class="frome frome-17 open-sans" placeholder="insert your goals">
-                    <button class="custom-button open-sans" onclick="window.location.href='home.html'">start your calculation</button>
+                    <input type="text" id="income" class="frome frome-15 open-sans" placeholder="insert your income">
+                    <input type="text" id="name" class="frome frome-16 open-sans" placeholder="insert your name">
+                    <input type="text" id="goals" class="frome frome-17 open-sans" placeholder="insert your goals">
+                    <button class="custom-button open-sans" id="liveAlertBtn" onclick="btnStartCalculation()">start your calculation</button>
 
                 
                 </div>
@@ -33,5 +37,8 @@
             
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
