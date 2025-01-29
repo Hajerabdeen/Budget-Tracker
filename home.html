@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/chart.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <title>Home</title>
+</head>
+
+<body>
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-transparent">
+    <div class="container-fluid justify-content-center">
+      <div class="nav-content d-flex flex-column justify-content-md-between flex-md-row w-95">
+        <a class="navbar-brand d-flex" href="home.html">
+          <div>
+            <img src="img/logo-main .png" alt="Logo" />
+          </div>
+          <div class="nav-header">
+            <p class="btn-color">Expenses</p>
+            <h1 class="text-light nav-header">
+              Monthly <span class="heading-color">Budget</span>
+            </h1>
+          </div>
+        </a>
+        <div class="d-flex justify-content-lg-end align-items-center fs-15">
+          <button class="btn add-btn btn-bg fw-600 fs-15 d-none d-md-block" type="submit">
+            New Expense
+          </button>
+          <div class="user d-flex align-items-center justify-content-center ms-4 ">
+            <img class="d-none d-md-block" src="img/user.svg" alt="User" />
+            <p class="text-light m-0 ms-lg-1 ms-0 mb-3 mb-md-0">Welcome John Doe</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- Main start -->
+  <section id="main" class="mt-5 h-75">
+    <div class="container h-75">
+      <div class="row h-100 h-100 d-flex align-items-stretch">
+        <div class="col-12 col-lg-6 p-2 order-lg-last">
+          <div class="content">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <div class="content p-2 h-100 d-flex flex-column justify-content-between bg-white">
+                    <div class="d-flex flex-column align-content-between h-100">
+                      <h3 class="text-center p-2 brdr-btm fw-400">
+                        Calculation
+                      </h3>
+                      <div class="income p-2 mb-3 mt-3">
+                        <p class="fw-bold text-center m-0 fs-13">INCOME</p>
+                        <p class="text-center m-0 mt-2 fs-3 fw-lighter">
+                          $2,700.00
+                        </p>
+                      </div>
+                      <div class="chart">
+                        <canvas id="expenseChart"></canvas>
+                      </div>
+                      <div class="info p-2 pb-3 brdr-btm">
+                        <div class="d-flex justify-content-between g-1">
+                          <div class="m-1 w-50">
+                            <div class="bg-main p-2 info-card fs-15">
+                              <p class="fw-bold m-0 text-light text-center">
+                                Available
+                              </p>
+                              <p class="m-0 heading-color text-center">
+                                $1,400.00
+                              </p>
+                            </div>
+                          </div>
+                          <div class="m-1 w-50">
+                            <div class="bg-main p-2 info-card fs-15">
+                              <p class="fw-bold m-0 text-center text-light">
+                                Spent
+                              </p>
+                              <p class="m-0 btn-color text-center">$400.00</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center w-100 m-auto">
+                        <button class="btn  reset-btn  btn-bg fw-600 fs-15 w-100 mt-2" type="submit">
+                          Reset Expense
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 mt-2 mt-md-0">
+                  <div class="content p-2 h-100 d-flex flex-column bg-white ">
+                    <h3 class="text-center p-2 brdr-btm fw-400">
+                      Optionals
+                    </h3>
+                    <div class="d-flex flex-column align-content-between h-100">
+                      <div class="income p-2 mb-2 mt-3 h-100 d-flex flex-column">
+                        <p class="fw-bold text-center m-0 fs-13">choose any fix expenses</p>
+                        <div class="fixed-expenses d-flex flex-column justify-content-between">
+                          <div class="expense mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="d-flex align-items-center justify-content-center">
+                                <img src="img/logo n.png" alt="netflix">
+                                <p class="fw-600 m-0 ms-2 fs-13 text-uppercase">Netflix</p>
+                              </div>
+                              <div>
+                                <button class="btn heading-bg rounded-pill fw-600 fs-13">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="expense mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="d-flex align-items-center justify-content-center">
+                                <img src="img/logo b.png" alt="spotify">
+                                <p class="fw-600 m-0 ms-2 fs-13 text-uppercase">Spotify</p>
+                              </div>
+                              <div>
+                                <button class="btn heading-bg rounded-pill fw-600 fs-13">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="expense mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="d-flex align-items-center justify-content-center">
+                                <img src="img/logo a.png" alt="amazon">
+                                <p class="fw-600 m-0 ms-2 fs-13 text-uppercase">Amazon</p>
+                              </div>
+                              <div>
+                                <button class="btn heading-bg rounded-pill fw-600 fs-13">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="expense mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="d-flex align-items-center justify-content-center">
+                                <img src="img/logo g.png" alt="google">
+                                <p class="fw-600 m-0 ms-2 fs-13 text-uppercase">Google</p>
+                              </div>
+                              <div>
+                                <button class="btn heading-bg rounded-pill fw-600 fs-13">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="expense mt-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="d-flex align-items-center justify-content-center">
+                                <img src="img/logo f.png" alt="facebook">
+                                <p class="fw-600 m-0 ms-2 fs-13 text-uppercase">Facebook</p>
+                              </div>
+                              <div>
+                                <button class="btn heading-bg rounded-pill fw-600 fs-13">Select</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="goals p-2 w-100 ">
+                        <h3 class="text-center brdr-top fw-400 pt-2">
+                          Goals
+                        </h3>
+                        <p class="fw-bold m-0 fs-13 goals-text ps-2 pb-2">"Save 10% of this amount entered this month
+                          from my salary"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 p-2 h-100 d-flex flex-column justify-content-center">
+          <div class="content h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <h6 class="btn-color m-0">Description</h6>
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle bg-transparent d-flex justify-content-center align-items-center"
+                  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="btn-content fs-15 fw-600">
+                    <span class="filter text-light fw-600">Filter Expenses</span>
+                    <span class="btn-color">All</span>
+                  </div>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">ocio</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">food</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">salud</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">savings</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">debts</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">subscription</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">Various</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item fw-600 text-light" href="#">rent</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center mt-auto mb-auto">
+              <div class="text-center w-75">
+                <h2 class="text-capitalize text-light fw-bolder fs-2">
+                  Looks like you haven't added any
+                  <span class="heading-color">expenses yet.</span>
+                </h2>
+              </div>
+              <div class="text-center w-50 fw-bold">
+                <p class="text-light">
+                  No worries, just hit the
+                  <span class="heading-color">'Add'</span> button to get
+                  started
+                </p>
+                <div class="cart-icon">
+                  <img src="img/cart.png" alt="cart" />
+                  <div class="d-flex justify-content-center mt-3 align-items-center">
+                    <img class="ps-3 pe-4" src="img/dot.png" alt="dot" />
+                    <img src="img/dot.png" alt="dot" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </section>
+  <!-- Main end -->
+
+  <!-- JavaScript Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
