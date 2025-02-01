@@ -31,7 +31,7 @@
           </div>
         </a>
         <div class="d-flex justify-content-lg-end align-items-center fs-15">
-          <button id="add-expense-btn" class="btn add-btn btn-bg fw-600 fs-15 d-none d-md-block" type="submit">
+          <button class="btn add-expense-btn add-btn btn-bg fw-600 fs-15 d-none d-md-block" type="submit">
             New Expense
           </button>
           <div class="user d-flex align-items-center justify-content-center ms-4 ">
@@ -49,7 +49,10 @@
       <div class="row h-100 h-100 d-flex align-items-stretch">
         <div class="col-12 col-lg-6 p-2 order-lg-last ">
           <div class="content">
-            <div class="container">
+            <div class="container position-relative">
+              <div class="circle add-expense-btn-mobile d-md-none">
+                <i class="fas fa-plus"></i>
+              </div>
               <div class="row">
                 <div class="col-12 col-md-6">
                   <div class="content p-2 h-100 d-flex flex-column justify-content-between bg-white">
@@ -347,7 +350,7 @@
                 <input type="date" id="date">
                 <label for="price">Price : </label>
                 <input type="number" id="price" placeholder="Enter Price">
-                <button type="submit" class=" add-expense-btn add-btn btn-bg fw-600 fs-16">Add</button>
+                <button type="submit" id="add-expense-btn" class="add-btn btn-bg fw-600 fs-16">Add</button>
               </form>
             </div>
           </div>
