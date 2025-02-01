@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "home.html";
     return;
   }
-
   resetForm();
 });
 
@@ -65,16 +64,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // expense list
+let myChart = null;
 let myObject = JSON.parse(localStorage.getItem('expenses')) || {};
 const expensesList = document.getElementById('expenses-list');
 const emptyState = document.getElementById('empty-state');
 const expenseForm = document.getElementById('expense-form');
 var layer = document.querySelector(".layer");
-const addButton = document.querySelector('.add-expense-btn');
+const addButton = document.querySelector('#add-expense-btn');
 const resetButton = document.querySelector('#reset-btn');
 
 // add expense form
-document.getElementById('add-expense-btn').addEventListener('click', function () {
+document.querySelector('.add-expense-btn').addEventListener('click', function () {
+  layer.classList.replace("d-none", "d-flex");
+});
+document.querySelector('.add-expense-btn-mobile').addEventListener('click', function () {
   layer.classList.replace("d-none", "d-flex");
 });
 
@@ -218,8 +221,12 @@ function updateChart(spent, income) {
       },
     ],
   };
-
-  new Chart(ctx, config);
+ // Destroy existing chart if it exists
+  if (myChart) {
+    myChart.destroy();
+  }
+   // Create new chart and store the instance
+  myChart = new Chart(ctx, config);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -280,7 +287,7 @@ expenseForm.addEventListener("submit", function (event) {
   document.querySelector(".filter-cat").textContent = "All";
   displayContent(myObject);
   updateBudget();
-  formContainer.classList.add('d-none');
+  layer.classList.add('d-none');
   expenseForm.reset();
   closeForm();
 });
