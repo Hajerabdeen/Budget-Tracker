@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/all.min.css" />
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/home.css" />
-  <link rel="stylesheet" href="css/chart.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -32,21 +31,20 @@
           </div>
         </a>
         <div class="d-flex justify-content-lg-end align-items-center fs-15">
-          <button class="btn add-btn btn-bg fw-600 fs-15 d-none d-md-block" type="submit">
+          <button id="add-expense-btn" class="btn add-btn btn-bg fw-600 fs-15 d-none d-md-block" type="submit">
             New Expense
           </button>
           <div class="user d-flex align-items-center justify-content-center ms-4 ">
             <img class="d-none d-md-block" src="img/user.svg" alt="User" />
-            <p class="text-light m-0 ms-lg-1 ms-0 mb-3 mb-md-0">Welcome John Doe</p>
+            <p id="user" class="text-light fw-600 m-0 ms-lg-1 ms-0 mb-3 mb-md-0"></p>
           </div>
         </div>
       </div>
     </div>
   </nav>
   <!-- Navbar end -->
-
   <!-- Main start -->
-  <section id="main" class="mt-5 h-75">
+  <section id="main" class="mt-5 position-relative">
     <div class="container h-100">
       <div class="row h-100 h-100 d-flex align-items-stretch">
         <div class="col-12 col-lg-6 p-2 order-lg-last ">
@@ -61,8 +59,8 @@
                       </h3>
                       <div class="income p-2 mb-3 mt-3">
                         <p class="fw-bold text-center m-0 fs-13">INCOME</p>
-                        <p class="text-center m-0 mt-2 fs-3 fw-lighter">
-                          $2,700.00
+                        <p id="income" class="text-center m-0 mt-2 fs-3 fw-lighter">
+                          &pound
                         </p>
                       </div>
                       <div class="chart">
@@ -75,8 +73,8 @@
                               <p class="fw-bold m-0 text-light text-center">
                                 Available
                               </p>
-                              <p class="m-0 heading-color text-center">
-                                $1,400.00
+                              <p id="available" class="m-0 heading-color text-center">
+                                &pound1,400.00
                               </p>
                             </div>
                           </div>
@@ -85,13 +83,13 @@
                               <p class="fw-bold m-0 text-center text-light">
                                 Spent
                               </p>
-                              <p class="m-0 btn-color text-center">$400.00</p>
+                              <p id="spent" class="m-0 btn-color text-center">&pound400.00</p>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="d-flex justify-content-center w-100 m-auto">
-                        <button class="btn  reset-btn  btn-bg fw-600 fs-15 w-100 mt-2" type="submit">
+                        <button id="reset-btn" class="btn  reset-btn  btn-bg fw-600 fs-15 w-100 mt-2" type="submit">
                           Reset Expense
                         </button>
                       </div>
@@ -179,9 +177,9 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-6 p-2 d-flex flex-column justify-content-center">
-          <div class="content h-100 d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-center mb-2">
+        <div class="col-12 col-lg-6 p-2 d-flex flex-column justify-content-center overflow-y-scroll">
+          <div id="content" class="content h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
               <h6 class="btn-color m-0">Description</h6>
               <div class="dropdown">
                 <button
@@ -189,38 +187,25 @@
                   type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <div class="btn-content fs-15 fw-600">
                     <span class="filter text-light fw-600">Filter Expenses</span>
-                    <span class="btn-color">All</span>
+                    <span class="btn-color filter-cat text-light fw-600">All</span>
                   </div>
                 </button>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">ocio</a>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="all">All</a></li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="ocio">Ocio</a></li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="food">Food</a></li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="salud">salud</a></li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="savings">Savings</a></li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="debts">Debts</a></li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="subscription">Subscription</a>
                   </li>
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">food</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">salud</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">savings</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">debts</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">subscription</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">Various</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item fw-600 text-light" href="#">rent</a>
-                  </li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="various">Various</a></li>
+                  <li><a class="dropdown-item fw-600 text-light" href="#" data-category="rent">Rent</a></li>
+
                 </ul>
               </div>
             </div>
-            <div class="d-flex flex-column align-items-center  m-auto">
+            <div class="d-flex flex-column align-items-center  m-auto" id="empty-state">
               <div class="text-center w-75">
                 <h2 class="text-capitalize text-light fw-bolder fs-2">
                   Looks like you haven't added any
@@ -242,10 +227,130 @@
                 </div>
               </div>
             </div>
+            <div id="expenses-list" class="expenses d-flex flex-column">
+              <!-- <div class="expenses-item d-flex justify-content-between align-items-center  ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div>
+              <div class="expenses-item d-flex justify-content-between align-items-center  ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div>
+              <div class="expenses-item d-flex justify-content-between align-items-center  ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div>
+              <div class="expenses-item d-flex justify-content-between align-items-center  ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div>
+              <div class="expenses-item d-flex justify-content-between align-items-center  ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div>
+              <div class="expenses-item d-flex justify-content-between align-items-center  ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div>
+              <div class="expenses-item d-flex justify-content-between align-items-center  ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div>
+              <div class="expenses-item d-flex justify-content-between align-items-center p-2 ps-0">
+                <div class="content d-flex align-items-center text-light">
+                  <img src="img/debts.svg" alt="netflix">
+                  <div class="d-flex flex-column ms-1">
+                    <p class="fw-400 m-0 ms-2 fs-16 text-capitalize">Debt</p>
+                    <p class="fw-400 m-0 ms-2 fs-13 text-capitalize">Date : <span class="fw-700">Today</span></p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center text-light">
+                  <p class="fw-400 m-0 text-uppercase fs-4">&pound100.00</p>
+                </div>
+              </div> -->
+            </div>
           </div>
-        </div>
-
-      </div>
+          <!-- Add New Expense Form -->
+          <div class="layer d-none align-items-center justify-content-center">
+            <div class="form-container text-light">
+              <button class="close-btn" onclick="closeForm()">×</button>
+              <h3>Add New Expense</h3>
+              <form id="expense-form">
+                <label for="category">Category:</label>
+                <select id="category">
+                  <option value="ocio">ocio</option>
+                  <option value="food">food</option>
+                  <option value="salud">salud</option>
+                  <option value="savings">savings</option>
+                  <option value="debts">debts</option>
+                  <option value="subscription">subscription</option>
+                  <option value="various">various</option>
+                  <option value="rent">rent</option>
+                </select>
+                <label for="date">Date :</label>
+                <input type="date" id="date">
+                <label for="price">Price : </label>
+                <input type="number" id="price" placeholder="Enter Price">
+                <button type="submit" class=" add-expense-btn add-btn btn-bg fw-600 fs-16">Add</button>
+              </form>
+            </div>
+          </div>
   </section>
   <!-- Main end -->
 

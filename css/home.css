@@ -4,27 +4,34 @@
   --btn-color: #ffe600;
   --bg-color: #fbfbfb;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Custom CSS */
 .bg-main {
   background-color: var(--main-color) !important;
 }
+
 .bg-white {
   background-color: var(--bg-color) !important;
 }
+
 .btn-color {
   color: var(--btn-color);
 }
+
 .heading-color {
   color: var(--heading-color) !important;
 }
+
 .heading-bg {
   background-color: var(--heading-color) !important;
 }
+
 .btn-bg {
   background-color: var(--btn-color);
 }
@@ -32,26 +39,41 @@
 .fw-600 {
   font-weight: 600 !important;
 }
+
+.fs-16 {
+  font-size: 16px !important;
+}
+
 .fs-15 {
   font-size: 14px !important;
 }
+
 .fs-13 {
   font-size: 13px !important;
 }
+
 .fs-12 {
   font-size: 11px !important;
 }
+
 .w-95 {
   width: 95% !important;
 }
+
 .brdr-btm {
   border-bottom: 1px solid#B2B2B2;
 }
+
 .brdr-top {
   border-top: 1px solid#B2B2B2;
 }
+
 .fw-400 {
   font-weight: 400 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
 }
 
 body {
@@ -60,9 +82,11 @@ body {
   height: 100vh;
   max-height: auto;
 }
+
 .fw-800 {
   font-weight: 800 !important;
 }
+
 nav .nav-content {
   border-bottom: 1px solid #fffde7;
 }
@@ -71,31 +95,28 @@ nav .nav-content {
   border-right: 1px solid var(--btn-color);
   padding-right: 5px;
 }
+
 .dropdown-toggle {
   width: 100% !important;
   border: 1px solid var(--btn-color) !important;
 }
+
 .dropdown-toggle::after {
   color: var(--btn-color);
 }
+
 .dropdown-menu {
   background-color: var(--main-color);
 }
+
 .dropdown-item:hover {
   color: var(--main-color) !important;
   background-color: var(--btn-color);
 }
+
 .income {
   background-color: #fffde7;
 }
-/* .chart-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff; 
-  border-radius: 10px;
-  padding: 20px;
-} */
 
 #expenseChart {
   width: 100%;
@@ -103,60 +124,139 @@ nav .nav-content {
   height: 80%;
   margin: 15px auto;
 }
+
 .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .info-card {
   width: 100%;
 }
+
 .reset-btn {
-flex-grow: 1;
+  flex-grow: 1;
 }
 
 .fixed-expenses {
   flex-grow: 1;
   gap: 20px;
 }
-.flex-grow-1{
+
+.flex-grow-1 {
   flex-grow: 1 !important;
 }
+
 .expense img {
   width: 40px;
   height: 40px;
 }
 
-.goals-text{
+.goals-text {
   border-left: 3px solid var(--heading-color);
 }
+
 @media (max-width: 768px) {
-  .navbar-brand img{
+  .navbar-brand img {
     width: 70px;
     height: 70px;
 
   }
-.nav-header p {
-font-size: 12px !important;
+
+  .nav-header p {
+    font-size: 12px !important;
+  }
+
+  .nav-header h1 {
+    font-size: 25px !important;
+  }
 }
-.nav-header h1{
-  font-size: 25px !important;
-}
-}
+
 @media (min-width: 769px)and (max-width: 992px) {
-  .navbar-brand img{
+  .navbar-brand img {
     width: 100px;
     height: 100px;
 
   }
-.nav-header p {
-font-size: px !important;
-}
-.nav-header h1{
-  font-size: 30px !important;
-}
+
+  .nav-header p {
+    font-size: px !important;
+  }
+
+  .nav-header h1 {
+    font-size: 30px !important;
+  }
 }
 
-.add-btn{
+.add-btn {
   flex-grow: 1;
 }
+
+.expenses-item {
+  border-top: 1px dotted #B2B2B2;
+  padding: 12px;
+
+}
+
+.expenses .expenses-item .content img {
+  width: 35px;
+  height: 35px;
+}
+
+.layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 1, 0.575);
+}
+
+.form-container {
+  background: var(--main-color);
+  padding: 20px;
+  width: 400px;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  font-size: 20px;
+  top: 23px;
+  right: 10px;
+  cursor: pointer;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+input,
+select {
+  display: block;
+  background-color: var(--main-color);
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+input,select{
+  border: 1px solid var(--btn-color);
+}
+
+.add-expense-btn{
+  margin-top: 10px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
